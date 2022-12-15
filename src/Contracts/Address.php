@@ -3,8 +3,9 @@
 namespace Sincos\HermesSDK\Contracts;
 
 use Sincos\HermesSDK\Enums\Country;
+use Illuminate\Contracts\Support\Arrayable;
 
-interface Address
+interface Address extends Arrayable
 {
     public function getCountry(): Country;
     public function getState(): ?string;

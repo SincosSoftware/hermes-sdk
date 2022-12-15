@@ -4,12 +4,13 @@ namespace Sincos\HermesSDK;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Sincos\HermesSDK\Contracts\{Address, Buyable, Configuration, Customer};
+use Sincos\HermesSDK\Contracts\{Address, Buyable, Configuration, Customer, ShippingMethod};
 use Illuminate\Support\Collection;
 use Sincos\HermesSDK\Enums\{Currency, Language};
 
 class Client
 {
+    private ?Collection $shippingMethods = null;
     private ?Customer $customer = null;
     private ?Address $address = null;
     private ?Collection $cartItems;
@@ -41,6 +42,12 @@ class Client
     public function withLanguage(Language $language): static
     {
         $this->language = $language;
+        return $this;
+    }
+
+    public function withShippingMethods(Shippingmethod ...$shippingMethods): static
+    {
+        $this->shippingMethods = collect($shippingMethods);
         return $this;
     }
 
@@ -88,6 +95,7 @@ class Client
             'language' => $this->language?->value ?? $this->configuration->getDefaultLanguage()->value,
             'customer' => $this->customer?->toArray() ?? ['type' => $this->configuration->getDefaultCustomerType()->value],
             'address' => $this->address?->toArray() ?? ['country' => $this->configuration->getDefaultCountry()->value],
+            'shipping_methods' => $this->shippingMethods?->toArray() ?? null
         ];
     }
 

@@ -2,9 +2,10 @@
 
 namespace Sincos\HermesSDK\Contracts;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Sincos\HermesSDK\Enums\CustomerType;
 
-interface Customer
+interface Customer extends Arrayable
 {
     public function getType(): CustomerType;
     public function getFirstName(): ?string;
