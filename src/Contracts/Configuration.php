@@ -8,7 +8,7 @@ use Sincos\HermesSDK\Enums\Language;
 
 interface Configuration
 {
-    public function getStoreIdentifier(): ?string;
+    public function getStoreIdentifier(): string;
     public function getStoreApiToken(): ?string;
     public function getHermesBaseUrl(): string;
     public function getDefaultCustomerType(): CustomerType;
