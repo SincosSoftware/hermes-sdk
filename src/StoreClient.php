@@ -10,6 +10,11 @@ class StoreClient
 {
     public function __construct(public readonly Configuration $configuration){}
 
+    /**
+     * Register the store, and retrieve the API token.
+     * NOTE: Currently you cant recover the api token after creation, so make sure you store it.
+     * @return \Illuminate\Http\Client\Response
+     */
     public function register(): Response
     {
         $baseUrl = $this->configuration->getHermesBaseUrl();
