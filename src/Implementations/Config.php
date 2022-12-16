@@ -7,15 +7,16 @@ use Sincos\HermesSDK\Enums\Country;
 use Sincos\HermesSDK\Enums\CustomerType;
 use Sincos\HermesSDK\Enums\Language;
 
-class Config implements Configuration {
+class Config implements Configuration
+{
     public function getStoreIdentifier(): ?string
     {
-        return '1234';
+        return '1337';
     }
 
-    public function getStoreApiKey(): ?string
+    public function getStoreApiToken(): ?string
     {
-        return 'test';
+        return '5|oJ4CHFw8x6Kd4RMoBzk6dEfBVTWCiOFm9NTJxkG9';
     }
 
     public function getHermesBaseUrl(): string

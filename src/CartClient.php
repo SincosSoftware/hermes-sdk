@@ -8,7 +8,7 @@ use Sincos\HermesSDK\Contracts\{Address, Buyable, Configuration, Customer, Shipp
 use Illuminate\Support\Collection;
 use Sincos\HermesSDK\Enums\{Currency, Language};
 
-class Client
+class CartClient
 {
     private ?Collection $shippingMethods = null;
     private ?Customer $customer = null;
@@ -55,8 +55,9 @@ class Client
     {
         $baseUrl = $this->configuration->getHermesBaseUrl();
 
-        return Http::withToken($this->configuration->getStoreApiKey())
+        return Http::withToken($this->configuration->getStoreApiToken())
             ->withHeaders([
+                'Authentication' => $this->configuration->getStoreApiToken(),
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
             ])
@@ -67,7 +68,7 @@ class Client
     {
         $baseUrl = $this->configuration->getHermesBaseUrl();
 
-        return Http::withToken($this->configuration->getStoreApiKey())
+        return Http::withToken($this->configuration->getStoreApiToken())
             ->withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
@@ -79,7 +80,7 @@ class Client
     {
         $baseUrl = $configuration->getHermesBaseUrl();
 
-        return Http::withToken($configuration->getStoreApiKey())
+        return Http::withToken($configuration->getStoreApiToken())
             ->withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
