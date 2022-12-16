@@ -57,7 +57,6 @@ class CartClient
 
         return Http::withToken($this->configuration->getStoreApiToken())
             ->withHeaders([
-                'Authentication' => $this->configuration->getStoreApiToken(),
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
             ])
