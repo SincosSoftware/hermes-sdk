@@ -9,14 +9,14 @@ use Sincos\HermesSDK\Enums\Language;
 
 class Config implements Configuration
 {
-    public function getStoreIdentifier(): ?string
+    public function getStoreIdentifier(): string
     {
-        return '1337';
+        return '1338';
     }
 
     public function getStoreApiToken(): ?string
     {
-        return '5|oJ4CHFw8x6Kd4RMoBzk6dEfBVTWCiOFm9NTJxkG9';
+        return '4|BsG1By1zv1oO5pm27L4B2L08dh88wPOPn3vtfpDw';
     }
 
     public function getHermesBaseUrl(): string
