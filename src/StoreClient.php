@@ -24,7 +24,12 @@ class StoreClient
                 'Content-Type' => 'application/json'
             ])
             ->post("$baseUrl/api/store", [
-                "store_id" => $this->configuration->getStoreIdentifier()
+                "store_id" => $this->configuration->getStoreIdentifier(),
+                'configuration' => [
+                    'callback_urls' => [
+                        'checkout_update' => $this->configuration->getCheckoutCallbackUrl()
+                    ]
+                ]
             ]);
     }
 }

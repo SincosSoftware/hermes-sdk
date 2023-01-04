@@ -11,6 +11,7 @@ interface Configuration
     public function getStoreIdentifier(): string;
     public function getStoreApiToken(): ?string;
     public function getHermesBaseUrl(): string;
+    public function getCheckoutCallbackUrl(): string;
     public function getDefaultCustomerType(): CustomerType;
     public function getDefaultLanguage(): Language;
     public function getDefaultCountry(): Country;
