@@ -2,7 +2,6 @@
 
 namespace Sincos\HermesSDK\Implementations;
 
-use Illuminate\Contracts\Support\Arrayable;
 use Sincos\HermesSDK\Contracts\Buyable;
 use Sincos\HermesSDK\Enums\BuyableType;
 
@@ -13,8 +12,8 @@ class CartItem implements Buyable
         public readonly string $uniqueIdentifier,
         public readonly string $title,
         public readonly int $quantity,
-        public readonly int $pricePerUnit,
-        public readonly float $vatRate,
+        public readonly int $grossPricePerUnit,
+        public readonly int $netPricePerUnit,
         public readonly bool $allowQuantityChange,
         public readonly ?string $subtitle = null,
         public readonly ?string $url = null,
@@ -29,8 +28,8 @@ class CartItem implements Buyable
             'unique_identifier' => $this->uniqueIdentifier,
             'title' => $this->title,
             'quantity' => $this->quantity,
-            'price_per_unit' => $this->pricePerUnit,
-            'vat_rate' => $this->vatRate,
+            'gross_price_per_unit' => $this->grossPricePerUnit,
+            'net_price_per_unit' => $this->netPricePerUnit,
             'allow_quantity_change' => $this->allowQuantityChange,
             'subtitle' => $this->subtitle,
             'url' => $this->url,
@@ -59,14 +58,14 @@ class CartItem implements Buyable
         return $this->quantity;
     }
 
-    public function getPricePerUnit(): int
+    public function getGrossPricePerUnit(): int
     {
-        return $this->pricePerUnit;
+        return $this->grossPricePerUnit;
     }
 
-    public function getVatRate(): float
+    public function getNetPricePerUnit(): int
     {
-        return $this->vatRate;
+        return $this->netPricePerUnit;
     }
 
     public function getAllowQuantityChange(): bool

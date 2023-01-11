@@ -16,7 +16,7 @@ class Config implements Configuration
 
     public function getStoreApiToken(): ?string
     {
-        return '35|5CZXh6BvWHNcKjrZcho1ULJD7CFHnT0TvOQJ4ruG';
+        return '1|CPV3F4BgZX2M7M3SFAOP89Y6Ug4ztV3dqAbaDqTW';
     }
 
     public function getHermesBaseUrl(): string
@@ -41,6 +41,6 @@ class Config implements Configuration
 
     public function getCheckoutCallbackUrl(): string
     {
-        return 'http://hermes.test/checkout-update';
+        return 'http://foff.test/checkout-callback';
     }
 }

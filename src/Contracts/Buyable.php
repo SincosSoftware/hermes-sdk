@@ -11,8 +11,8 @@ interface Buyable extends Arrayable
     public function getType(): BuyableType;
     public function getTitle(): string;
     public function getQuantity(): int;
-    public function getPricePerUnit(): int;
-    public function getVatRate(): float;
+    public function getGrossPricePerUnit(): int;
+    public function getNetPricePerUnit(): int;
     public function getAllowQuantityChange(): bool;
     public function getSubtitle(): ?string;
     public function getUrl(): ?string;
