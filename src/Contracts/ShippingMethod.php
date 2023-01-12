@@ -8,7 +8,8 @@ interface ShippingMethod extends Arrayable
 {
     public function getUniqueIdentifier(): string;
     public function getTitle(): string;
-    public function getPrice(): int;
+    public function getNetPrice(): int;
+    public function getGrossPrice(): int;
     public function getLogoUrl(): ?string;
     public function getMerchantAdditionalData(): ?string;
     public function toArray(): array;
