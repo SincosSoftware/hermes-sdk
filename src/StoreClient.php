@@ -26,8 +26,11 @@ class StoreClient
             ->post("$baseUrl/api/store", [
                 "store_id" => $this->configuration->getStoreIdentifier(),
                 'configuration' => [
+                    'logo_url' => $this->configuration->getLogoUrl(),
+                    'home_url' => $this->configuration->getHomeUrl(),
                     'callback_urls' => [
-                        'checkout_update' => $this->configuration->getCheckoutCallbackUrl()
+                        'checkout_update' => $this->configuration->getCheckoutCallbackUrl(),
+                        'order_created' => $this->configuration->getOrderCreatedCallbackUrl(),
                     ]
                 ]
             ]);

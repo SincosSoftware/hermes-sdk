@@ -16,7 +16,7 @@ class Config implements Configuration
 
     public function getStoreApiToken(): ?string
     {
-        return '1|CPV3F4BgZX2M7M3SFAOP89Y6Ug4ztV3dqAbaDqTW';
+        return '1|PQNPxtld7dt3TdfFjdp6MtY1zMuNhUYW2Sbs0gdn';
     }
 
     public function getHermesBaseUrl(): string
@@ -42,5 +42,20 @@ class Config implements Configuration
     public function getCheckoutCallbackUrl(): string
     {
         return 'http://foff.test/checkout-callback';
+    }
+
+    public function getOrderCreatedCallbackUrl(): string
+    {
+        return 'http://foff.test/order-created-callback';
+    }
+
+    public function getLogoUrl(): ?string
+    {
+        return 'https://jaktfall.no/bilder_diverse/1392280182.png';
+    }
+
+    public function getHomeUrl(): string
+    {
+        return 'http://foff.test';
     }
 }

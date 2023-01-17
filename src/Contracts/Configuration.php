@@ -15,4 +15,7 @@ interface Configuration
     public function getDefaultCustomerType(): CustomerType;
     public function getDefaultLanguage(): Language;
     public function getDefaultCountry(): Country;
+    public function getOrderCreatedCallbackUrl(): string;
+    public function getLogoUrl(): ?string;
+    public function getHomeUrl(): string;
 }
